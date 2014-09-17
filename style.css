@@ -1,0 +1,104 @@
+/* @override http://localhost:8700/style.css */
+
+/* CSS reset */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}h1,h2,h3,h4,h5,h6{font-weight:normal}li{list-style:none}
+
+body{
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	background: #333;
+}
+
+div#deck-o-cards{
+	background: rgba(0,0,0,.06);
+	width: 400px;
+	height: 500px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+div#deck-o-cards ul{
+	width: 250px;
+	height: 350px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 70px;
+}
+
+div#deck-o-cards ul li{
+	width: 250px;
+	height: 350px;
+	position: absolute;
+	background: #FFF;
+	font: bold 200px/320px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-align: center;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
+	-webkit-transform-origin: 125px 175px;
+	-webkit-transition: all 200ms ease-in-out;
+	z-index: 1;
+	border: 1px solid rgba(0,0,0,.3);
+	-webkit-border-radius: 2px;
+	-webkit-background-clip: padding-box;
+}
+
+div#deck-o-cards ul li:nth-child(1){
+	-webkit-transform: rotateZ(-2deg)
+}
+
+div#deck-o-cards ul li:nth-child(2){
+	-webkit-transform: rotateZ(0deg)
+}
+
+div#deck-o-cards ul li:nth-child(3){
+	-webkit-transform: rotateZ(2deg)
+}
+
+div#deck-o-cards:hover li,
+div#deck-o-cards ul.clicked li{
+	-webkit-transform-origin: 225px 0;
+	cursor: pointer;
+	opacity: .8;
+}
+
+div#deck-o-cards:hover li:nth-child(1){
+	-webkit-transform: translateX(40px) translateY(0) rotateZ(2deg);
+}
+
+div#deck-o-cards:hover li:nth-child(2){
+	-webkit-transform: translateX(-40px) translateY(20px) rotateZ(0deg)
+}
+
+div#deck-o-cards:hover li:nth-child(3){
+	-webkit-transform: translateX(-100px) translateY(40px) rotateZ(-2deg)
+}
+
+div#deck-o-cards ul li:hover{
+	background: #F8F;
+	opacity: 1;
+}
+
+div#deck-o-cards ul li.current:hover{
+	opacity: .8;
+	background: #FFF;
+}
+
+div#deck-o-cards ul.clicked li:nth-child(1){
+	-webkit-transform: translateX(-180px) rotateZ(2deg);
+}
+
+div#deck-o-cards ul.clicked li:nth-child(2){
+	-webkit-transform: translateX(-200px) rotateZ(0deg)
+}
+
+div#deck-o-cards ul.clicked li:nth-child(3){
+	-webkit-transform: translateX(-220px) rotateZ(-2deg)
+}
+
+div#deck-o-cards ul.clicked li.clicked{
+	-webkit-transform: translateX(200px) rotateZ(-2deg)
+}
+
+div#deck-o-cards ul li.current{
+	z-index: 100;
+}
